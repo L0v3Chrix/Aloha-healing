@@ -1,7 +1,7 @@
 import { GoogleGenAI, FunctionDeclaration, Type } from "@google/genai";
 import { Review } from '../types';
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY || '' });
 
 const SYSTEM_INSTRUCTION_CHAT = `
 You are 'Kai', the booking assistant for Kilo, the owner and therapist at "Aloha Healing & Wellness".
